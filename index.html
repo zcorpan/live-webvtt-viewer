@@ -5,8 +5,8 @@
 html { font-family:Lucida Bright, Georgia, serif }
 body { margin:1em 0.5em 0 }
 textarea, pre { display:block; font:small Lucida Sans Typewriter, Lucida Console, monaco, Bitstream Vera Sans Mono, monospace }
-video { outline:thin solid; margin-top:1em; width:calc(100% - 1em) }
-textarea { width:calc(100% - 1em); height:15em; margin-top:1em }
+video { outline:thin solid; margin-top:1em; width:98%; width:calc(100% - 1em) }
+textarea { width:98%; width:calc(100% - 1em); height:15em; margin-top:1em }
 figure { margin:1em 0 }
 figcaption, label { font-weight:bold; color:saddlebrown }
 .save, pre { background:#eee; padding:.5em }
@@ -116,7 +116,8 @@ videoElm.addEventListener('load', function(e) {
   var track = e.target;
   var cues = [];
   var div = document.createElement('div');
-  cues.forEach.call(track.track.cues, function(cue) {
+  for (var i = 0; i < track.track.cues.length; ++i) {
+    var cue = track.track.cues[i];
     div.textContent = '';
     div.appendChild(cue.getCueAsHTML());
     cues.push({
@@ -136,7 +137,7 @@ videoElm.addEventListener('load', function(e) {
       text: cue.text,
       html: div.innerHTML
     });
-  });
+  }
   parsedResult.textContent = JSON.stringify(cues, null, '  ');
 }, true);
 
