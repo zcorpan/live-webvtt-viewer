@@ -107,6 +107,9 @@ vtt.oninput = function() {
   }
   videoElm.appendChild(track);
   track.track.mode = 'showing';
+  if (videoElm.paused) {
+    videoElm.currentTime = videoElm.currentTime;
+  }
 }
 
 videoElm.addEventListener('load', function(e) {
