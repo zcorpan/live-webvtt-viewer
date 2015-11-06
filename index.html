@@ -11,6 +11,8 @@ textarea { width:98%; width:calc(100% - 1em); height:15em; margin-top:1em }
 figure { margin:1em 0 }
 figcaption, label { font-weight:bold; color:saddlebrown }
 .save, pre { background:#eee; padding:.5em }
+footer { position:absolute; top:1em; right:1em; opacity:0.5; transition:opacity 0.2s }
+footer:hover { opacity:1 }
 @media (min-width:40em) {
   div { display:table; width:100%; table-layout:fixed }
   div > * { display:table-cell }
@@ -186,3 +188,5 @@ save.onclick = function() {
   location.hash = '#' + hash;
 }
 </script>
+
+<footer><a href=https://github.com/zcorpan/live-webvtt-viewer>Source code</a> available under <a href=http://creativecommons.org/publicdomain/zero/1.0/>CC0</a>.</footer>
